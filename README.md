@@ -5,6 +5,12 @@ TalentScout is an intelligent AI-powered Hiring Assistant chatbot designed to st
 
 ---
 
+## Live Demo  
+
+Live working demo:
+[TalentScout on Streamlit](https://talentscout-l8u6jzorscte2ezubc64om.streamlit.app/)
+
+---
 ## Installation Instructions  
 
 ### 1. Clone the Repository:
