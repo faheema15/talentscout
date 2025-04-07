@@ -22,8 +22,6 @@ else:
         logger.error(f"Failed to initialize Anthropic client: {str(e)}")
         client = None
 
-# The newest Anthropic model is "claude-3-5-sonnet-20241022" which was released October 22, 2024
-# do not change this unless explicitly requested by the user
 DEFAULT_MODEL = "claude-3-5-sonnet-20241022"
 
 def generate_chat_response(chat_history, interview_stage, candidate_info):
