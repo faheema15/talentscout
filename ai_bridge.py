@@ -1,20 +1,25 @@
 import os
-from dotenv import load_dotenv
 import json
 import logging
+import streamlit as st  # for Streamlit secrets
 
-load_dotenv()
-
-openai_api_key = os.getenv("OPENAI_API_KEY")
-anthropic_api_key = os.getenv("ANTHROPIC_API_KEY")
+# Load API Keys
+if "OPENAI_API_KEY" in st.secrets:
+    openai_api_key = st.secrets["OPENAI_API_KEY"]
+    anthropic_api_key = st.secrets["ANTHROPIC_API_KEY"]
+else:
+    from dotenv import load_dotenv
+    load_dotenv()
+    openai_api_key = os.getenv("OPENAI_API_KEY")
+    anthropic_api_key = os.getenv("ANTHROPIC_API_KEY")
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 # Check which AI providers are available
-has_openai = bool(os.environ.get("OPENAI_API_KEY"))
-has_anthropic = bool(os.environ.get("ANTHROPIC_API_KEY"))
+has_openai = bool(openai_api_key)
+has_anthropic = bool(anthropic_api_key)
 
 logger.info(f"AI providers available - OpenAI: {has_openai}, Anthropic: {has_anthropic}")
 
