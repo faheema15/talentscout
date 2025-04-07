@@ -3,7 +3,11 @@ import json
 import logging
 import streamlit as st  # for Streamlit secrets
 
-# Load API Keys
+#To load API Keys locally
+# from dotenv import load_dotenv
+# load_dotenv()
+
+# Load API Keys in streamlit
 if "OPENAI_API_KEY" in st.secrets:
     openai_api_key = st.secrets["OPENAI_API_KEY"]
     anthropic_api_key = st.secrets["ANTHROPIC_API_KEY"]
