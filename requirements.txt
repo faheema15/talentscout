@@ -34,3 +34,8 @@ MarkupSafe==3.0.2
 narwhals==1.34.0
 numpy==2.2.4
 openai==1.70.0
+streamlit
+requests
+pandas
+python-dotenv
+
