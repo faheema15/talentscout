@@ -9,8 +9,8 @@ TalentScout is an intelligent AI-powered Hiring Assistant chatbot designed to st
 
 ### 1. Clone the Repository:
 ```bash
-git clone https://github.com/yourusername/TALENTSCOUT.git
-cd TALENTSCOUT
+git clone https://github.com/faheema15/talentscout.git
+cd talentscout
 ```
 
 ### 2. Create and Activate Virtual Environment:
@@ -34,7 +34,7 @@ ANTHROPIC_API_KEY=your_anthropic_api_key
 
 ### 5. Run the Application:
 ```bash
-python app.py
+streamlit run app.py
 ```
 
 ---
@@ -56,7 +56,6 @@ Once the application is running:
 - `openai` — OpenAI API integration.
 - `anthropic` — Anthropic API integration.
 - `python-dotenv` — Loading environment variables.
-- `FastAPI` or `Flask` — (depending on your app.py setup).
 - `logging` — For structured logs.
 
 ### Architecture:
@@ -64,12 +63,9 @@ Once the application is running:
 ```
 app.py              → Entry point of the application
 ai_bridge.py        → Handles routing between OpenAI & Anthropic APIs
-helpers/
-│
-├── openai_helper.py      → OpenAI response generation logic
-└── anthropic_helper.py   → Anthropic response generation logic
+openai_helper.py      → OpenAI response generation logic
+anthropic_helper.py   → Anthropic response generation logic
 utils.py            → Utility functions
-config.py           → Environment configuration
 .env                → API Keys (not shared publicly)
 requirements.txt    → Dependencies
 ```
@@ -84,9 +80,6 @@ requirements.txt    → Dependencies
   - Ask technical questions based on the interview stage.
   - Handle fallback gracefully if one provider fails.
 
-> Example:
-> *"Great! Can you tell me about your latest project experience and the technologies you used?"*
-
 ---
 
 ## Challenges & Solutions  
@@ -99,8 +92,6 @@ requirements.txt    → Dependencies
 | Modular Design | Split the logic into `helpers/` and `ai_bridge.py` for maintainability and scalability. |
 
 ---
-
-## Final Note  
 
 This project demonstrates the power of AI-driven chatbots in the recruitment domain. TalentScout ensures efficiency, professionalism, and adaptability while interacting with candidates.
 
